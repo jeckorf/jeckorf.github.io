@@ -1,196 +1,541 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
 <head>
   <meta charset="utf-8">
-  
+  <title>飞亚特交安</title>
+  <!-- SEO Meta Tags-->
+  <meta name="description" content="飞亚特交安">
+  <meta name="keywords"
+    content="bootstrap, business, consulting, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, multipurpose, product landing, shop, software, ui kit, web studio, landing, html5, css3, javascript, gallery, slider, touch, creative">
+  <meta name="author" content="Jeckorf">
+  <!-- Viewport-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Favicon and Touch Icons-->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" color="#5bbad5" href="safari-pinned-tab.svg">
+  <meta name="msapplication-TileColor" content="#766df4">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Page loading styles-->
+  <style>
+    .page-loading {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-transition: all .4s .2s ease-in-out;
+      transition: all .4s .2s ease-in-out;
+      background-color: #fff;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 9999;
+    }
 
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+    .page-loading.active {
+      opacity: 1;
+      visibility: visible;
+    }
 
-<meta name="generator" content="Hexo 5.2.0"></head>
+    .page-loading-inner {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      -webkit-transition: opacity .2s ease-in-out;
+      transition: opacity .2s ease-in-out;
+      opacity: 0;
+    }
+
+    .page-loading.active>.page-loading-inner {
+      opacity: 1;
+    }
+
+    .page-loading-inner>span {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: normal;
+      color: #737491;
+    }
+
+    .page-spinner {
+      display: inline-block;
+      width: 2.75rem;
+      height: 2.75rem;
+      margin-bottom: .75rem;
+      vertical-align: text-bottom;
+      border: .15em solid #766df4;
+      border-right-color: transparent;
+      border-radius: 50%;
+      -webkit-animation: spinner .75s linear infinite;
+      animation: spinner .75s linear infinite;
+    }
+
+    @-webkit-keyframes spinner {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spinner {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+  <!-- Page loading scripts-->
+  <script>
+    (function() {
+      window.onload = function() {
+        var preloader = document.querySelector('.page-loading');
+        preloader.classList.remove('active');
+        setTimeout(function() {
+          preloader.remove();
+        }, 2000);
+      };
+    })();
+  </script>
+  <!-- Vendor Styles-->
+  <link rel="stylesheet" media="screen" href="vendor/simplebar/dist/simplebar.min.css" />
+  <!-- Main Theme Styles + Bootstrap-->
+  <link rel="stylesheet" media="screen" href="css/theme.min.css">
+</head>
+<!-- Body-->
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
+  <!-- Page loading spinner-->
+  <div class="page-loading active">
+    <div class="page-loading-inner">
+      <div class="page-spinner"></div><span>加载中...</span>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+  </div>
+  <main class="page-wrapper">
+
+
+    <div class="modal fade" id="modal-content" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content border-0">
+          <div class="view show">
+            <div class="modal-header border-0 bg-dark px-4">
+              <h4 class="modal-title text-light">咨询</h4>
+              <button class="btn-close btn-close-white" type="button" data-bs-dismiss="modal" aria-label="btn-close "></button>
+            </div>
+            <div class="modal-body px-4">
+              <p class="fs-ms text-muted">请在下方输入您需要咨询的项目和您的个人信息以方便我们联系您</p>
+              <form class="needs-validation" novalidate>
+                <div class="mb-3">
+                  <div class="input-group"><i class="ai-user position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                    <input class="form-control rounded" type="text" placeholder="您的姓名" name="name" required>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <div class="input-group"><i class="ai-mail position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                    <input class="form-control rounded" type="text" placeholder="联系方式" name="contents" required>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <div class="input-group">
+                    <textarea class="form-control" rows="4" placeholder="项目需求" name="requir" required></textarea>
+                  </div>
+                </div>
+                <button class="btn btn-primary d-block w-100" type="submit">提交咨询</button>
+              </form>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/09/19/hello-world/" class="article-date">
-  <time datetime="2020-09-18T16:25:18.814Z" itemprop="datePublished">2020-09-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/19/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/09/19/hello-world/" data-id="ckf8gg1h800002oti1nde4ecv" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2020/09/19/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
+    <header class="header navbar navbar-expand-lg navbar-light bg-light navbar-sticky" data-scroll-header data-fixed-element>
+      <div class="container px-0 px-xl-3">
+        <button class="navbar-toggler ms-n2 me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#primaryMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand flex-shrink-0 order-lg-1 mx-auto ms-lg-0 pe-lg-2 me-lg-4" href="index.html">
+          <img class="d-none d-lg-block" src="img/logo/logo-dark.png" alt="飞亚特" width="153">
+          <img class="d-lg-none" src="img/logo/logo-icon.png" alt="飞亚特" width="58">
+        </a>
+        <div class="d-flex align-items-center order-lg-3 ms-lg-auto">
+          <a class="nav-link-style fs-sm text-nowrap" href="#modal-content" data-bs-toggle="modal">
+            <i class="ai-user fs-xl me-2 align-middle"></i>咨询
+          </a>
+        </div>
+        <div class="offcanvas offcanvas-collapse order-lg-2" id="primaryMenu">
+          <div class="offcanvas-cap navbar-shadow">
+            <h5 class="mt-1 mb-0">导航</h5>
+            <button class="btn-close lead" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <!-- Menu-->
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link " data-scroll href="index.html">首页</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " data-scroll href="about.html">关于我们</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">产品</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="baogu.html">抱箍</a></li>
+                  <li><a class="dropdown-item" href="djls.html">地脚螺栓</a></li>
+                  <li><a class="dropdown-item" href="jiaoma.html">角码</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </header>
+
+
+
+    <section class="jarallax bg-primary pt-5 pt-lg-7 pb-7" data-jarallax="" data-speed="0.3">
+
+      <div class="shape shape-bottom shape-curve bg-body">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 185.4">
+          <path fill="currentColor" d="M3000,0v185.4H0V0c496.4,115.6,996.4,173.4,1500,173.4S2503.6,115.6,3000,0z"></path>
+        </svg>
+      </div>
+      <!-- Text-->
+      <div class="container bg-overlay-content text-center pt-6 pt-lg-7">
+        <h2 class="font-size-xl font-weight-normal text-light">行业领军者</h2>
+        <h1 class="text-light">更可靠的合作伙伴</h1>
+      </div>
+      <div class="d-block d-sm-none" style="height: 100px;"></div>
+      <div class="d-none d-sm-block d-lg-none" style="height: 300px;"></div>
+      <div class="d-none d-lg-block" style="height: 400px;"></div>
+      <div id="jarallax-container-0" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; z-index: -100;">
+
+      </div>
+    </section>
+    <!-- About-->
+    <section class="container position-relative zindex-5" style="margin-top: -175px;">
+      <div class="bg-light rounded-3 shadow py-5 py-md-6 px-4 px-md-0">
+        <div class="row align-items-center py-3 py-md-0">
+          <div class="col-xl-6 col-lg-5 col-md-4 text-center">
+            <h2 class="pb-3 pb-md-0">关于我们</h2>
+            <h5><span class="d-block text-body opacity-25">邯郸飞亚特金属制品有限公司</span></h5>
+          </div>
+          <div class="col-xl-5 col-lg-6 col-md-7 text-center text-md-start">
+            <p>
+              <blockquote class="blockquote font-size-sm">专业生产镀锌/喷塑波形护栏和立柱，标志杆，标志牌抱箍，滑道螺栓，预埋件，防阻块和托架，柱帽，轮廓标，防眩板，美标护栏板以及各种异型配件。
+            </p>
+            <p class="mb-0">公司一直致力于交通安全设施的研制和开发，产品质量和性能已成为本行业中的领军者。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="container py-5 py-md-6 py-lg-7">
+      <div class="row align-items-center mt-3 mt-md-0">
+        <div class="col-lg-4 col-md-5 order-md-2 text-center text-md-start mb-5 mb-md-0">
+          <h2 class="mb-3">
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">服务</font>
+            </font>
+          </h2>
+          <h5>
+            <font style="vertical-align: inherit;">专注道路安全二十年，为您出行保驾护航</font>
+            </font>
+            </p>
+        </div>
+        <div class="col-lg-8 col-md-7 order-md-1 bg-position-start-bottom bg-repeat-0" style="background-image: url(img/svg/bg-shape.svg);">
+          <div class="mx-auto mx-md-0 ms-xl-7" style="max-width: 600px;">
+            <div class="row align-items-center">
+              <div class="col-sm-6">
+                <div class="bg-light shadow-lg rounded-3 p-4 mb-grid-gutter text-center text-sm-start">
+                  <img class="d-inline-block mb-4 mt-2" width="100" src="img/svg/save_money.svg" alt="图标">
+                  <h3 class="h5 mb-2">
+                    <font style="vertical-align: inherit;">
+                      <font style="vertical-align: inherit;">价格</font>
+                    </font>
+                  </h3>
+                  <p class="fs-sm">
+                    <font style="vertical-align: inherit;">
+                      <font style="vertical-align: inherit;">我们拥有独立的生产工厂，省去中间环节批发商人"盘剥"</font>
+                    </font>
+                  </p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="bg-light shadow-lg rounded-3 p-4 mb-grid-gutter text-center text-sm-start">
+                  <img class="d-inline-block mb-4 mt-2" width="100" src="img/svg/logistics.svg" alt="图标">
+                  <h3 class="h5 mb-2">
+                    <font style="vertical-align: inherit;">
+                      <font style="vertical-align: inherit;">物流</font>
+                    </font>
+                  </h3>
+                  <p class="fs-sm">
+                    <font style="vertical-align: inherit;">
+                      <font style="vertical-align: inherit;">顺丰物流，保障订单及时送到您手中</font>
+                    </font>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mx-auto mx-md-0" style="max-width: 600px;">
+            <div class="row align-items-center">
+              <div class="col-sm-6">
+                <div class="bg-light shadow-lg rounded-3 p-4 mb-grid-gutter text-center text-sm-start">
+                  <img class="d-inline-block mb-4 mt-2" width="100" src="img/svg/customer_service.svg" alt="图标">
+                  <h3 class="h5 mb-2">
+                    <font style="vertical-align: inherit;">
+                      <font style="vertical-align: inherit;">客服支持</font>
+                    </font>
+                  </h3>
+                  <p class="fs-sm">
+                    <font style="vertical-align: inherit;">
+                      <font style="vertical-align: inherit;">7x12客服支持</font>
+                    </font>
+                  </p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="bg-light shadow-lg rounded-3 p-4 mb-grid-gutter text-center text-sm-start">
+                  <img class="d-inline-block mb-4 mt-2" width="100" src="img/svg/quality.svg" alt="图标">
+                  <h3 class="h5 mb-2">
+                    <font style="vertical-align: inherit;">
+                      <font style="vertical-align: inherit;">质量保证</font>
+                    </font>
+                  </h3>
+                  <p class="fs-sm">
+                    <font style="vertical-align: inherit;">
+                      <font style="vertical-align: inherit;">遵循国际管理体系ISO9001:2015 ISO1400认证</font>
+                    </font>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Portfolio-->
+    <section id="product" class="bg-secondary py-5 py-md-6">
+      <div class="container py-2">
+        <h2 class="text-center">
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">我们的产品</font>
+          </font>
+        </h2>
+        <p class="text-center text-muted mb-5 pb-1">
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;"><code>点击下方任意卡片查看详情</code></font>
+          </font>
+        </p>
+        <div class="row">
+          <div class="col-lg-4 col-sm-6 mb-grid-gutter">
+            <div class="card card-flip">
+              <div class="card-flip-inner">
+                <div class="card-flip-front"><img class="card-img" src="img/baogu-1.jpg" alt="抱箍">
+                </div><a class="card-flip-back" href="baogu.html">
+                  <div class="card-body">
+                    <div class="card-body-inner">
+                      <h3 class="h5 card-title mb-2">
+                        <font style="vertical-align: inherit;">
+                          <font style="vertical-align: inherit;">抱箍</font>
+                        </font>
+                      </h3>
+                      <p class="font-size-sm text-muted">
+                        <font style="vertical-align: inherit;">
+                          <font style="vertical-align: inherit;">由左、右两半片抱箍对合后联接而成，左、右两半片抱箍均呈半圆环状，半圆环两端向外弯折，各形成一个安装耳，其特征在于：所述的左半片抱箍一端的安装耳上开有嵌槽，相应的，与其相配合的右半片抱箍相应端的安装耳上设置有销轴，右半片抱箍一端安装耳上的销轴嵌入左半片抱箍一端安装耳上的嵌槽.</font>
+                        </font>
+                      </p><span class="btn btn-primary btn-sm">
+                        <font style="vertical-align: inherit;">
+                          <font style="vertical-align: inherit;">查看产品</font>
+                        </font>
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6 mb-grid-gutter">
+            <div class="card card-flip">
+              <div class="card-flip-inner">
+                <div class="card-flip-front"><img class="card-img" src="img/jiaoma-1.jpg" alt="角码">
+                </div><a class="card-flip-back" href="jiaoma.html">
+                  <div class="card-body">
+                    <div class="card-body-inner">
+                      <h3 class="h5 card-title mb-2">
+                        <font style="vertical-align: inherit;">
+                          <font style="vertical-align: inherit;">角码</font>
+                        </font>
+                      </h3>
+                      <p class="font-size-sm text-muted">
+                        <font style="vertical-align: inherit;">
+                          <font style="vertical-align: inherit;">在建筑学中角码是连接90度直角相交构件的五金件。根据被连接构件受力大小来决定角码的型号和形式以及材料种类。角码常常用于装饰工程及家具装配中。如幕墙安装就是由角码来连接的。</font>
+                        </font>
+                      </p><span class="btn btn-primary btn-sm">
+                        <font style="vertical-align: inherit;">
+                          <font style="vertical-align: inherit;">查看产品</font>
+                        </font>
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6 mb-grid-gutter">
+            <div class="card card-flip">
+              <div class="card-flip-inner">
+                <div class="card-flip-front"><img class="card-img" src="img/djls-1.jpg" alt="地脚螺栓">
+                </div><a class="card-flip-back" href="djls.html">
+                  <div class="card-body">
+                    <div class="card-body-inner">
+                      <h3 class="h5 card-title mb-2">
+                        <font style="vertical-align: inherit;">
+                          <font style="vertical-align: inherit;">地脚螺栓</font>
+                        </font>
+                      </h3>
+                      <p class="font-size-sm text-muted">
+                        <font style="vertical-align: inherit;">
+                          <font style="vertical-align: inherit;">地脚螺栓别名加劲锚板地脚螺栓、焊接地脚螺栓、锚爪式地脚螺栓、筋板式地脚螺栓、地脚栓、地脚螺丝、地脚丝等。</font>
+                        </font>
+                      </p><span class="btn btn-primary btn-sm">
+                        <font style="vertical-align: inherit;">
+                          <font style="vertical-align: inherit;">查看产品</font>
+                        </font>
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--
+    <section id="comment" class="container py-5 py-md-6 py-lg-7">
+      <div class="row align-items-center carousel py-4 py-md-2">
+        <div class="col-md-8">
+          <h2 class="pb-2 mb-4 text-center text-md-left">来自客户的反馈</h2>
+          <div class="carousel-inner" data-carousel-options="{&quot;nav&quot;: false, &quot;gutter&quot;: 20}">
+            <blockquote class="blockquote mt-3 mb-0">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida dignissimos ducimus qui blanditiis praesentium voluptatum.</p>
+              <p>Mattis enim ut tellus elementum sagittis vitae et leo duis.</p>
+              <footer class="media align-items-center"><img class="rounded-circle" width="42" src="img/testimonials/01.jpg" alt="Emma Brown" />
+                <div class="media-body text-heading font-size-md font-weight-medium pl-2 ml-1">Emma Brown</div>
+              </footer>
+            </blockquote>
+            <blockquote class="blockquote mt-3 mb-0">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida dignissimos ducimus qui blanditiis praesentium voluptatum.</p>
+              <p>Mattis enim ut tellus elementum sagittis vitae et leo duis.</p>
+              <footer class="media align-items-center"><img class="rounded-circle" width="42" src="img/testimonials/03.jpg" alt="Tim Brooks" />
+                <div class="media-body text-heading font-size-md font-weight-medium pl-2 ml-1">Tim Brooks</div>
+              </footer>
+            </blockquote>
+            <blockquote class="blockquote mt-3 mb-0">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida dignissimos ducimus qui blanditiis praesentium voluptatum.</p>
+              <p>Mattis enim ut tellus elementum sagittis vitae et leo duis.</p>
+              <footer class="media align-items-center"><img class="rounded-circle" width="42" src="img/testimonials/02.jpg" alt="Sanomi Smith" />
+                <div class="media-body text-heading font-size-md font-weight-medium pl-2 ml-1">Sanomi Smith</div>
+              </footer>
+            </blockquote>
+            <blockquote class="blockquote mt-3 mb-0">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida dignissimos ducimus qui blanditiis praesentium voluptatum.</p>
+              <p>Mattis enim ut tellus elementum sagittis vitae et leo duis.</p>
+              <footer class="media align-items-center"><img class="rounded-circle" width="42" src="img/testimonials/04.jpg" alt="Charlie Welch" />
+                <div class="media-body text-heading font-size-md font-weight-medium pl-2 ml-1">Charlie Welch</div>
+              </footer>
+            </blockquote>
+            <blockquote class="blockquote mt-3 mb-0">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida dignissimos ducimus qui blanditiis praesentium voluptatum.</p>
+              <p>Mattis enim ut tellus elementum sagittis vitae et leo duis.</p>
+              <footer class="media align-items-center"><img class="rounded-circle" width="42" src="img/testimonials/05.jpg" alt="Sarah Palson" />
+                <div class="media-body text-heading font-size-md font-weight-medium pl-2 ml-1">Sarah Palson</div>
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 offset-lg-1">
+          <div class="carousel-pager d-flex flex-wrap flex-md-column justify-content-center align-items-center align-items-md-start border-left pt-4 mt-4 pl-md-3 pt-md-0 mt-md-0"><a class="swap-image active mx-4 my-3 my-md-4" href="#"
+              data-goto="1"><img class="swap-to" width="136" src="img/demo/gadget-landing/logos/01_color.png" alt="Logo" /><img class="swap-from" width="136" src="img/demo/gadget-landing/logos/01_gray.png" alt="Logo" /></a><a
+              class="swap-image mx-4 my-3 my-md-4" href="#" data-goto="2"><img class="swap-to" width="130" src="img/demo/gadget-landing/logos/02_color.png" alt="Logo" /><img class="swap-from" width="130"
+                src="img/demo/gadget-landing/logos/02_gray.png" alt="Logo" /></a><a class="swap-image mx-4 my-3 my-md-4" href="#" data-goto="3"><img class="swap-to" width="114" src="img/demo/gadget-landing/logos/05_color.png" alt="Logo" /><img
+                class="swap-from" width="114" src="img/demo/gadget-landing/logos/05_gray.png" alt="Logo" /></a><a class="swap-image mx-4 my-3 my-md-4" href="#" data-goto="4"><img class="swap-to" width="103"
+                src="img/demo/gadget-landing/logos/03_color.png" alt="Logo" /><img class="swap-from" width="103" src="img/demo/gadget-landing/logos/03_gray.png" alt="Logo" /></a><a class="swap-image mx-4 my-3 my-md-4" href="#"
+              data-goto="5"><img class="swap-to" width="143" src="img/demo/gadget-landing/logos/04_color.png" alt="Logo" /><img class="swap-from" width="143" src="img/demo/gadget-landing/logos/04_gray.png" alt="Logo" /></a></div>
+        </div>
+      </div>
+    </section>-->
+  </main>
+
+  <footer class="footer bg-secondary pt-5 pt-md-6 pt-lg-7">
+    <div class="container py-3 pt-md-0">
+      <div class="row pb-2 pb-md-5">
+        <form class="col-xl-6 col-lg-7 col-md-7 needs-validation mb-5" novalidate>
+          <h2 class="pb-4">欢迎咨询</h2>
+          <div class="input-group mb-3"><i class="ai-user position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+            <input class="form-control rounded" type="text" placeholder="您的姓名" name="name" required>
+          </div>
+          <div class="input-group mb-3"><i class="ai-mail position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+            <input class="form-control rounded" type="text" placeholder="联系方式" name="contents" required>
+          </div>
+          <div class="mb-3 pb-1">
+            <textarea class="form-control" rows="4" placeholder="项目需求" name="requir" required></textarea>
+          </div>
+          <div class="row pt-2">
+            <div class="col-lg-6 col-md-8">
+              <button class="btn btn-primary btn-block" type="submit">提交咨询</button>
+            </div>
+          </div>
+        </form>
+        <div class="col-xl-3 col-lg-4 offset-xl-3 offset-lg-1 col-md-5 mb-5">
+          <h2 class="pb-2">联系我们</h2>
+          <ul class="list-unstyled font-size-sm mb-4 pb-2">
+            <li><i class="ai-map-pin h2 mb-0 mr-2"></i><a class="nav-link-style" href="mailto:w15033880623@163.com">厂址 : 邯郸市永年区北东街工业园区</a></li>
+            <li><i class="ai-mail h2 mb-0 mr-2"></i><a class="nav-link-style" href="mailto:w15033880623@163.com">邮箱 : w15033880623@163.com</a></li>
+            <li><i class="ai-phone h2 mb-0 mr-2"></i><a class="nav-link-style" href="tel:+0310-6806698">电话 : 0310-6806698</a></li>
+            <li><i class="ai-wechat h2 mb-0 mr-2"></i>
+              <p class="nav-link-style">微信 : </p><br><img src="img/wechat.png">
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </div>
-</footer>
+    <div class="bg-dark pt-5 pb-4">
+      <div class="container d-md-flex justify-content-between align-items-center text-center">
+        <p class="fs-sm mb-3 order-md-1">
+          <span class="text-light opacity-50 mr-1">版权所有 邯郸飞亚特金属制品有限公司. 由</span>
+          <a class="nav-link-style nav-link-light" href="https://api.jeckorf.com" target="_blank" rel="noopener">Jeckorf</a>
+          <span class="text-light opacity-50 mr-1">设计</span>
+        </p>
+      </div>
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
+  </footer>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <a class="btn-scroll-top" href="#top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted font-size-sm mr-2">TOP</span>
+    <i class="btn-scroll-top-icon ai-arrow-up"> </i>
+  </a>
 
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-  </div>
+  <script src="vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/simplebar/dist/simplebar.min.js"></script>
+  <script src="vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+  <script src="vendor/parallax-js/dist/parallax.min.js"></script>
+  <!-- Main theme script-->
+  <script src="js/theme.min.js"></script>
 </body>
+
 </html>
