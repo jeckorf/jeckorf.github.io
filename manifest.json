@@ -1,7 +1,7 @@
 {
   "name": "飞亚特交安",
   "short_name": "飞亚特",
-  "theme_color": "#008aff",
+  "theme_color": "#ffffff",
   "icons": [{
     "src": "android-chrome-192x192.png",
     "sizes": "192x192",
