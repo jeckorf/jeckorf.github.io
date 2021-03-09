@@ -16,7 +16,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="manifest" href="site.webmanifest">
+  <link rel="manifest" href="manifest.json">
   <link rel="mask-icon" color="#5bbad5" href="safari-pinned-tab.svg">
   <meta name="msapplication-TileColor" content="#766df4">
   <meta name="theme-color" content="#ffffff">
@@ -129,7 +129,7 @@
     <div class="modal fade" id="modal-content" tabindex="-1">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content border-0">
-          <div class="view show" >
+          <div class="view show">
             <div class="modal-header border-0 bg-dark px-4">
               <h4 class="modal-title text-light">咨询</h4>
               <button class="btn-close btn-close-white" type="button" data-bs-dismiss="modal" aria-label="btn-close "></button>
@@ -142,16 +142,16 @@
                     <input class="form-control rounded" type="text" placeholder="您的姓名" name="name" required>
                   </div>
                 </div>
-                  <div class="mb-3">
-                    <div class="input-group"><i class="ai-mail position-absolute top-50 start-0 translate-middle-y ms-3"></i>
-                      <input class="form-control rounded" type="text" placeholder="联系方式" name="contents" required>
-                    </div>
+                <div class="mb-3">
+                  <div class="input-group"><i class="ai-mail position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                    <input class="form-control rounded" type="text" placeholder="联系方式" name="contents" required>
                   </div>
-                    <div class="mb-3">
-                      <div class="input-group">
-                        <textarea class="form-control" rows="4" placeholder="项目需求" name="requir" required></textarea>
-                      </div>
-                    </div>
+                </div>
+                <div class="mb-3">
+                  <div class="input-group">
+                    <textarea class="form-control" rows="4" placeholder="项目需求" name="requir" required></textarea>
+                  </div>
+                </div>
                 <button class="btn btn-primary d-block w-100" type="submit">提交咨询</button>
               </form>
             </div>
@@ -183,21 +183,21 @@
           <div class="offcanvas-body">
             <!-- Menu-->
             <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link " data-scroll href="index.html">首页</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link " data-scroll href="about.html">关于我们</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">产品</a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="baogu.html">抱箍</a></li>
-                    <li><a class="dropdown-item" href="djls.html">地脚螺栓</a></li>
-                    <li><a class="dropdown-item" href="jiaoma.html">角码</a></li>
-                  </ul>
-                </li>
-              </ul>
+              <li class="nav-item">
+                <a class="nav-link " data-scroll href="index.html">首页</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " data-scroll href="about.html">关于我们</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">产品</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="baogu.html">抱箍</a></li>
+                  <li><a class="dropdown-item" href="djls.html">地脚螺栓</a></li>
+                  <li><a class="dropdown-item" href="jiaoma.html">角码</a></li>
+                </ul>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -270,56 +270,62 @@
         </div>
       </div>
     </section>
-  </main>
-  <!-- Footer-->
-    <footer class="footer bg-secondary pt-5 pt-md-6 pt-lg-7">
-      <div class="container py-3 pt-md-0">
-        <div class="row pb-2 pb-md-5">
-          <form class="col-xl-6 col-lg-7 col-md-7 needs-validation mb-5" novalidate>
-            <h2 class="pb-4">欢迎咨询</h2>
-            <div class="input-group mb-3"><i class="ai-user position-absolute top-50 start-0 translate-middle-y ms-3"></i>
-              <input class="form-control rounded" type="text" placeholder="您的姓名" name="name" required>
-            </div>
-            <div class="input-group mb-3"><i class="ai-mail position-absolute top-50 start-0 translate-middle-y ms-3"></i>
-              <input class="form-control rounded" type="text" placeholder="联系方式" name="contents" required>
-            </div>
-            <div class="mb-3 pb-1">
-              <textarea class="form-control" rows="4" placeholder="项目需求" name="requir" required></textarea>
-            </div>
-            <div class="row pt-2">
-              <div class="col-lg-6 col-md-8">
-                <button class="btn btn-primary btn-block" type="submit">提交咨询</button>
-              </div>
-            </div>
-          </form>
-          <div class="col-xl-3 col-lg-4 offset-xl-3 offset-lg-1 col-md-5 mb-5">
-            <h2 class="pb-2">联系我们</h2>
-            <ul class="list-unstyled font-size-sm mb-4 pb-2">
-              <li><i class="ai-map-pin h2 mb-0 mr-2"></i><a class="nav-link-style" target="_blank" href="https://ditu.amap.com/place/B01360NVSU">厂址 : 邯郸市永年区北东街工业园区</a></li>
-              <li><i class="ai-mail h2 mb-0 mr-2"></i><a class="nav-link-style" href="mailto:w15033880623@163.com">邮箱 : w15033880623@163.com</a></li>
-              <li><i class="ai-phone h2 mb-0 mr-2"></i><a class="nav-link-style" href="tel:+0310-6806698">电话 : 0310-6806698</a></li>
-              <li><i class="ai-wechat h2 mb-0 mr-2"></i>
-                <p class="nav-link-style">微信 : </p><br><img src="img/wechat.png">
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="bg-dark pt-5 pb-4">
-        <div class="container d-md-flex justify-content-between align-items-center text-center">
-          <p class="fs-sm mb-3 order-md-1">
-            <span class="text-light opacity-50 mr-1">版权所有 邯郸飞亚特金属制品有限公司. 由</span>
-            <a class="nav-link-style nav-link-light" href="https://api.jeckorf.com" target="_blank" rel="noopener">Jeckorf</a>
-            <span class="text-light opacity-50 mr-1">设计</span>
-          </p>
-        </div>
-      </div>
-    </footer>
-
-    <a class="btn-scroll-top" href="#top" data-scroll>
-      <span class="btn-scroll-top-tooltip text-muted font-size-sm mr-2">TOP</span>
-      <i class="btn-scroll-top-icon ai-arrow-up"> </i>
+  </main><!-- Iframe (Google map) -->
+  <div class="gallery">
+    <a href="https://surl.amap.com/6fjWbns4qM" data-iframe="true" class="gallery-item rounded-3" data-sub-html='<h6 class="fs-sm text-light">公司地址</h6>'>
+      <img src="path-to-thumbnail-image" alt="邯郸飞亚特金属制品有限公司">
+      <span class="gallery-caption">邯郸飞亚特金属制品有限公司</span>
     </a>
+  </div>
+  <!-- Footer-->
+  <footer class="footer bg-secondary pt-5 pt-md-6 pt-lg-7">
+    <div class="container py-3 pt-md-0">
+      <div class="row pb-2 pb-md-5">
+        <form class="col-xl-6 col-lg-7 col-md-7 needs-validation mb-5" novalidate>
+          <h2 class="pb-4">欢迎咨询</h2>
+          <div class="input-group mb-3"><i class="ai-user position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+            <input class="form-control rounded" type="text" placeholder="您的姓名" name="name" required>
+          </div>
+          <div class="input-group mb-3"><i class="ai-mail position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+            <input class="form-control rounded" type="text" placeholder="联系方式" name="contents" required>
+          </div>
+          <div class="mb-3 pb-1">
+            <textarea class="form-control" rows="4" placeholder="项目需求" name="requir" required></textarea>
+          </div>
+          <div class="row pt-2">
+            <div class="col-lg-6 col-md-8">
+              <button class="btn btn-primary btn-block" type="submit">提交咨询</button>
+            </div>
+          </div>
+        </form>
+        <div class="col-xl-3 col-lg-4 offset-xl-3 offset-lg-1 col-md-5 mb-5">
+          <h2 class="pb-2">联系我们</h2>
+          <ul class="list-unstyled font-size-sm mb-4 pb-2">
+            <li><i class="ai-map-pin h2 mb-0 mr-2"></i><a class="nav-link-style" target="_blank" href="https://ditu.amap.com/place/B0HGMHWZVQ">厂址 : 邯郸市永年区北东街工业园区</a></li>
+            <li><i class="ai-mail h2 mb-0 mr-2"></i><a class="nav-link-style" href="mailto:w15033880623@163.com">邮箱 : w15033880623@163.com</a></li>
+            <li><i class="ai-phone h2 mb-0 mr-2"></i><a class="nav-link-style" href="tel:+0310-6806698">电话 : 0310-6806698</a></li>
+            <li><i class="ai-wechat h2 mb-0 mr-2"></i>
+              <p class="nav-link-style">微信 : </p><br><img src="img/wechat.png">
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="bg-dark pt-5 pb-4">
+      <div class="container d-md-flex justify-content-between align-items-center text-center">
+        <p class="fs-sm mb-3 order-md-1">
+          <span class="text-light opacity-50 mr-1">版权所有 邯郸飞亚特金属制品有限公司. 由</span>
+          <a class="nav-link-style nav-link-light" href="https://api.jeckorf.com" target="_blank" rel="noopener">Jeckorf</a>
+          <span class="text-light opacity-50 mr-1">设计</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <a class="btn-scroll-top" href="#top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted font-size-sm mr-2">TOP</span>
+    <i class="btn-scroll-top-icon ai-arrow-up"> </i>
+  </a>
   <!-- Vendor scrits: js libraries and plugins-->
   <script src="vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="vendor/simplebar/dist/simplebar.min.js"></script>
